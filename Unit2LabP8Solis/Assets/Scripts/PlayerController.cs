@@ -19,15 +19,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Click();
+    }
+
+    void Click()
+    {
+        //Sends raycast where clicked
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePosition = Input.mousePosition;
             Ray ray = m_Camera.ScreenPointToRay(mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log(hit.collider.name);
+                //Name of hit GameObject
+                Debug.Log(hit.collider.tag);
+
+                transform.position = hit.point;
             }
         }
-        //mouse position to translate player
     }
 }
