@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
                 //Name of hit GameObject
                 Debug.Log(hit.collider.tag);
 
-                transform.position = hit.point;
+                
             }
         }
     }
